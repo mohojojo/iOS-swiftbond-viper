@@ -1,0 +1,6 @@
+framework module Pods_reactiveKitBondTests {
+  umbrella header "Pods-reactiveKitBondTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
