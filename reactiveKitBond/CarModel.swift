@@ -11,10 +11,9 @@ import Foundation
 
 class CarViewModel {
     
-    let results = MutableObservableArray<ListCellViewModel>([])
+    let results = MutableObservableArray<CarModel>([])
     let tempName = Observable<String?>("")
 
     init() {
-        results.append(ListCellViewModel(content: "feri"))
     }
 }

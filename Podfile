@@ -9,6 +9,7 @@ target 'reactiveKitBond' do
 
     pod 'ReactiveKit', '~> 3.5.3'
     pod 'Bond', '~> 6.2'
+    pod 'ObjectMapper', '~> 2.2'
 
   target 'reactiveKitBondTests' do
     inherit! :search_paths

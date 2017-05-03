@@ -108,6 +108,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		9B6721A81EBA0005009B3656 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				9BA6044F1EB8C1340059ECDD /* ListCellViewModel.swift */,
+			);
+			name = Entities;
+			sourceTree = "<group>";
+		};
 		9BC773751EB37A73002A65A3 = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +141,7 @@
 		9BC773801EB37A73002A65A3 /* reactiveKitBond */ = {
 			isa = PBXGroup;
 			children = (
+				9B6721A81EBA0005009B3656 /* Entities */,
 				9BC773811EB37A73002A65A3 /* AppDelegate.swift */,
 				9BC773831EB37A73002A65A3 /* ViewController.swift */,
 				9BC773851EB37A73002A65A3 /* Main.storyboard */,
@@ -141,7 +150,6 @@
 				9BC7738A1EB37A73002A65A3 /* LaunchScreen.storyboard */,
 				9BC7738D1EB37A73002A65A3 /* Info.plist */,
 				9BA6044D1EB8BE100059ECDD /* TextTableViewCell.swift */,
-				9BA6044F1EB8C1340059ECDD /* ListCellViewModel.swift */,
 			);
 			path = reactiveKitBond;
 			sourceTree = "<group>";

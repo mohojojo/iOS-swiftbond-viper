@@ -23,12 +23,11 @@ class ViewController: UIViewController {
         
         carVM.tempName.bidirectionalBind(to: textField.reactive.text)
         
+        
         buttonka.reactive.tap.observeNext { [weak self] _ in
             guard let weakSelf = self else { return }
             
-            weakSelf.carVM.results.append(ListCellViewModel(content: weakSelf.carVM.tempName.value!))
-            weakSelf.carVM.results[0].content.value = "tamaska"
-            
+            weakSelf.carVM.results.append(CarModel(JSONString: "{ \"type\":\"Audi\", \"year\": 1984, \"color\": \"red\" }")!)
             
         }.dispose(in: bag)
 
@@ -36,8 +35,10 @@ class ViewController: UIViewController {
             
             let cell = (tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as? TextTableViewCell)!
             let viewModel = dataSource[indexPath.row]
-        
-            viewModel.content.bind(to: cell.cellText).dispose(in: cell.bag)
+            
+            viewModel.type?.bind(to: cell.cellText).dispose(in: cell.bag)
+            viewModel.color?.bind(to: cell.cellText.reactive.textColor).dispose(in: cell.bag)
+            viewModel.year?.map { "\($0)" }.bind(to: cell.yearInput).dispose(in: cell.bag)
         
             return cell
         }
