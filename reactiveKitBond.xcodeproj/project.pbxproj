@@ -10,6 +10,8 @@
 		20D3ED9124BEF9879D0F8EC6 /* Pods_reactiveKitBondTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D56E9843D90C3D6F746E4E29 /* Pods_reactiveKitBondTests.framework */; };
 		28B76B7562C16AEC5653AAC0 /* Pods_reactiveKitBond.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB83DD30F809EA91F9746D8E /* Pods_reactiveKitBond.framework */; };
 		79F0D8932E1CC9A572F759DB /* Pods_reactiveKitBondUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C503E780DA7881DD307CB980 /* Pods_reactiveKitBondUITests.framework */; };
+		9B2431851EBF33BD00FEC781 /* PersonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2431841EBF33BD00FEC781 /* PersonCollectionViewCell.swift */; };
+		9B2431871EBF6D3F00FEC781 /* CanvasUICollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2431861EBF6D3F00FEC781 /* CanvasUICollectionViewLayout.swift */; };
 		9BA6044E1EB8BE100059ECDD /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA6044D1EB8BE100059ECDD /* PersonTableViewCell.swift */; };
 		9BA604501EB8C1340059ECDD /* PersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA6044F1EB8C1340059ECDD /* PersonModel.swift */; };
 		9BC773821EB37A73002A65A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC773811EB37A73002A65A3 /* AppDelegate.swift */; };
@@ -42,6 +44,8 @@
 /* Begin PBXFileReference section */
 		3ACEB33F34E9CE34C1234170 /* Pods-reactiveKitBondUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reactiveKitBondUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-reactiveKitBondUITests/Pods-reactiveKitBondUITests.release.xcconfig"; sourceTree = "<group>"; };
 		798A9CE9C805AD57AFF3CDFD /* Pods-reactiveKitBondTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reactiveKitBondTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-reactiveKitBondTests/Pods-reactiveKitBondTests.release.xcconfig"; sourceTree = "<group>"; };
+		9B2431841EBF33BD00FEC781 /* PersonCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonCollectionViewCell.swift; sourceTree = "<group>"; };
+		9B2431861EBF6D3F00FEC781 /* CanvasUICollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasUICollectionViewLayout.swift; sourceTree = "<group>"; };
 		9BA6044D1EB8BE100059ECDD /* PersonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
 		9BA6044F1EB8C1340059ECDD /* PersonModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonModel.swift; sourceTree = "<group>"; };
 		9BC7737E1EB37A73002A65A3 /* reactiveKitBond.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = reactiveKitBond.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,11 +149,13 @@
 				9BC773811EB37A73002A65A3 /* AppDelegate.swift */,
 				9BC773831EB37A73002A65A3 /* ViewController.swift */,
 				9BC773851EB37A73002A65A3 /* Main.storyboard */,
+				9B2431861EBF6D3F00FEC781 /* CanvasUICollectionViewLayout.swift */,
 				9BC773AF1EB3855A002A65A3 /* SWMainViewModel.swift */,
 				9BC773881EB37A73002A65A3 /* Assets.xcassets */,
 				9BC7738A1EB37A73002A65A3 /* LaunchScreen.storyboard */,
 				9BC7738D1EB37A73002A65A3 /* Info.plist */,
 				9BA6044D1EB8BE100059ECDD /* PersonTableViewCell.swift */,
+				9B2431841EBF33BD00FEC781 /* PersonCollectionViewCell.swift */,
 			);
 			path = reactiveKitBond;
 			sourceTree = "<group>";
@@ -464,6 +470,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BA604501EB8C1340059ECDD /* PersonModel.swift in Sources */,
+				9B2431871EBF6D3F00FEC781 /* CanvasUICollectionViewLayout.swift in Sources */,
+				9B2431851EBF33BD00FEC781 /* PersonCollectionViewCell.swift in Sources */,
 				9BC773841EB37A73002A65A3 /* ViewController.swift in Sources */,
 				9BC773821EB37A73002A65A3 /* AppDelegate.swift in Sources */,
 				9BA6044E1EB8BE100059ECDD /* PersonTableViewCell.swift in Sources */,

@@ -12,35 +12,53 @@ import Bond
 import Alamofire
 import PromiseKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, CanvasLayoutDelegate {
 
     @IBOutlet weak var buttonka: UIButton!
     @IBOutlet weak var resultsTable: UITableView!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var twoWayField: UITextField!
     @IBOutlet weak var twoWayLabelResult: UILabel!
+    @IBOutlet weak var bondView: UIView!
+    @IBOutlet weak var bondCollectionView: UICollectionView!
     
     let mainVM = SWMainViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        mainVM.persons.bindAnimated(to: resultsTable) { dataSource, indexPath, tableView in
+        if let layout = bondCollectionView?.collectionViewLayout as? CanvasUICollectionViewLayout {
+            layout.delegate = self
+        }
+        
+//        mainVM.persons.bindAnimated(to: resultsTable) { dataSource, indexPath, tableView in
+//            
+//            let cell = (tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as? PersonTableViewCell)!
+//            let viewModel = dataSource[indexPath.row]
+//            
+//            viewModel.name?.bind(to: cell.nameLabel.reactive.text).dispose(in: cell.bag)
+//            //            viewModel.height?.bind(to: cell.eyeColorView.reactive.backgroundColor).dispose(in: cell.bag)
+//            //            viewModel.created?.map { "\($0)" }.bind(to: cell.ageLabel).dispose(in: cell.bag)
+//            
+//            return cell
+//        }
+        
+        mainVM.viewWidth.bind(to: bondView.reactive.width)
+        mainVM.viewOrigin.bind(to: bondView.reactive.origin)
+        
+        mainVM.persons.bind(to: bondCollectionView) { dataSource, indexPath, collectionView in
+            let cell = (collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath) as? PersonCollectionViewCell)!
             
-            let cell = (tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as? PersonTableViewCell)!
             let viewModel = dataSource[indexPath.row]
-            
-            viewModel.name?.bind(to: cell.nameLabel.reactive.text).dispose(in: cell.bag)
-            //            viewModel.height?.bind(to: cell.eyeColorView.reactive.backgroundColor).dispose(in: cell.bag)
-            //            viewModel.created?.map { "\($0)" }.bind(to: cell.ageLabel).dispose(in: cell.bag)
+            viewModel.name?.bind(to: cell.personName.reactive.text).dispose(in: cell.bag)
+            viewModel.cellWidth?.bind(to: cell.reactive.width).dispose(in: cell.bag)
+            viewModel.origin?.bind(to: cell.reactive.origin).dispose(in: cell.bag)
+            cell.frame.origin.x = 20
             
             return cell
         }
-        
-        twoWayField.reactive.text.bidirectionalMap(to: { Int($0!)! }, from: { "\($0)" }).bidirectionalBind(to: mainVM.twoWayText)
-        
         //twoWayField.reactive.text.map({ Int($0!)! }).bind(to: mainVM.twoWayText)
-        mainVM.twoWayText.map({ "\($0)" }).bind(to: twoWayLabelResult)
+        //mainVM.twoWayText.map({ "\($0)" }).bind(to: twoWayLabelResult)
         
         Alamofire.request("http://swapi.co/api/people/", method: .get)
             .responseJsonDictionary()
@@ -58,8 +76,25 @@ class ViewController: UIViewController {
             guard let weakSelf = self else { return }
             
             weakSelf.mainVM.twoWayText.value = 1234
+            weakSelf.mainVM.viewWidth.value = 100
+            weakSelf.mainVM.viewOrigin.value = CGPoint(x: 100, y: 200)
+            weakSelf.mainVM.persons[0].cellWidth?.value = 200
+            weakSelf.mainVM.persons[0].origin?.value = CGPoint(x: 100, y: 200)
+            weakSelf.mainVM.persons[1].origin?.value = CGPoint(x: 10, y: 120)
+            
         }.dispose(in: bag)
 
+    }
+    
+    func collectionView(collectionView:UICollectionView, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        let item = mainVM.persons[indexPath.item]
+        return CGSize(width: 20, height: (item.height?.value)!)
+    }
+    
+    // 2
+    func collectionView(collectionView: UICollectionView, originForItemAtIndexPath indexPath: NSIndexPath) -> CGPoint {
+        let item = mainVM.persons[indexPath.item]
+        return (item.origin?.value)!
     }
 }
 
@@ -116,6 +151,21 @@ public extension SignalProtocol where Element: DataSourceEventProtocol, Error ==
         return bind(to: tableView, using: AnimatedTableViewBond<DataSource>(createCell: createCell))
     }
 }
+
+extension ReactiveExtensions where Base: UIView {
+    var width: Bond<CGFloat?> {
+        return bond { view, width in
+            view.frame.size.width = width!
+        }
+    }
+    
+    var origin: Bond<CGPoint?> {
+        return bond { view, origin in
+            view.frame.origin = origin!
+        }
+    }
+}
+
 
 
 

@@ -14,6 +14,8 @@ struct Person {
     var name: Observable<String>?
     var created: Observable<Date>?
     var height: Observable<Int>?
+    var cellWidth: Observable<CGFloat>?
+    var origin: Observable<CGPoint>?
 }
 
 enum SerializationError: Error {
@@ -47,6 +49,8 @@ extension Person {
         self.name = Observable(name)
         self.created = Observable(date!)
         self.height = Observable(Int(height)!)
+        self.cellWidth = Observable(20)
+        self.origin = Observable<CGPoint>(CGPoint(x: Double(arc4random_uniform(UInt32(200))), y: Double(arc4random_uniform(UInt32(200)))))
     }
 }
 

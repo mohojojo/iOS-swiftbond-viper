@@ -74,10 +74,46 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T6h-lf-nb8">
+                                <rect key="frame" x="67" y="269" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.31562633620982405" blue="0.48941158774236282" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4Aw-dS-ql7">
+                                <rect key="frame" x="0.0" y="170" width="375" height="497"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewLayout key="collectionViewLayout" id="M4b-lo-16T" customClass="CanvasUICollectionViewLayout" customModule="reactiveKitBond" customModuleProvider="target"/>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionCell" id="mNA-et-ZcH" customClass="PersonCollectionViewCell" customModule="reactiveKitBond" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfN-We-8tK">
+                                                    <rect key="frame" x="0.0" y="0.0" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" red="1" green="0.31562633620000002" blue="0.48941158769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="personName" destination="gfN-We-8tK" id="qzd-TL-Twj"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
+                        <outlet property="bondCollectionView" destination="4Aw-dS-ql7" id="gZx-gM-YIX"/>
+                        <outlet property="bondView" destination="T6h-lf-nb8" id="0oz-vN-h99"/>
                         <outlet property="buttonka" destination="mNS-PM-60a" id="EjX-mu-4jF"/>
                         <outlet property="resultsTable" destination="PF7-5F-4ba" id="MqV-3D-WaH"/>
                         <outlet property="textField" destination="aAe-aF-bDM" id="5y4-3C-WwS"/>
