@@ -1,22 +1,39 @@
 PODS:
+  - Alamofire (4.4.0)
   - Bond (6.2.6):
     - Diff (~> 0.4)
     - ReactiveKit (~> 3.5.3)
   - Diff (0.5.3)
-  - ObjectMapper (2.2.6)
+  - PromiseKit (4.2.0):
+    - PromiseKit/Foundation (= 4.2.0)
+    - PromiseKit/QuartzCore (= 4.2.0)
+    - PromiseKit/UIKit (= 4.2.0)
+  - PromiseKit/Alamofire (4.2.0):
+    - Alamofire (~> 4.0)
+    - PromiseKit/CorePromise
+  - PromiseKit/CorePromise (4.2.0)
+  - PromiseKit/Foundation (4.2.0):
+    - PromiseKit/CorePromise
+  - PromiseKit/QuartzCore (4.2.0):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (4.2.0):
+    - PromiseKit/CorePromise
   - ReactiveKit (3.5.3)
 
 DEPENDENCIES:
+  - Alamofire (~> 4.4)
   - Bond (~> 6.2)
-  - ObjectMapper (~> 2.2)
-  - ReactiveKit (~> 3.5.3)
+  - PromiseKit (~> 4.2)
+  - PromiseKit/Alamofire (~> 4.0)
+  - ReactiveKit (~> 3.5)
 
 SPEC CHECKSUMS:
+  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
   Bond: 0d7a52e9aec644c3b4985ceeb224a402b1efd691
   Diff: befa1d19c32726b2b36ce915d98793e2fbde8dcc
-  ObjectMapper: 042708195cc46c20871cbcbec0453826398273fd
+  PromiseKit: 08dfb783c161ddcd95b7912421f14c5113fd8318
   ReactiveKit: 39a0723167d04107140cf540f04526deecd18891
 
-PODFILE CHECKSUM: e4b6858fb78533bcb78429c56d3eb564879393b0
+PODFILE CHECKSUM: 3f029937d9d19005e24721588d9aba3ff8e5efc9
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.2.0

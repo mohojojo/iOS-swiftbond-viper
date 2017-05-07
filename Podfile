@@ -6,10 +6,11 @@ target 'reactiveKitBond' do
   use_frameworks!
 
   # Pods for reactiveKitBond
-
-    pod 'ReactiveKit', '~> 3.5.3'
-    pod 'Bond', '~> 6.2'
-    pod 'ObjectMapper', '~> 2.2'
+  pod 'Alamofire', '~> 4.4'
+  pod 'ReactiveKit', '~> 3.5'
+  pod 'Bond', '~> 6.2'
+  pod 'PromiseKit', '~> 4.2'
+  pod 'PromiseKit/Alamofire', '~> 4.0'
 
   target 'reactiveKitBondTests' do
     inherit! :search_paths

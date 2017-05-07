@@ -9,39 +9,57 @@
 import UIKit
 import ReactiveKit
 import Bond
+import Alamofire
+import PromiseKit
 
 class ViewController: UIViewController {
 
     @IBOutlet weak var buttonka: UIButton!
     @IBOutlet weak var resultsTable: UITableView!
     @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var twoWayField: UITextField!
+    @IBOutlet weak var twoWayLabelResult: UILabel!
     
-    let carVM = CarViewModel()
+    let mainVM = SWMainViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        carVM.tempName.bidirectionalBind(to: textField.reactive.text)
+        mainVM.persons.bindAnimated(to: resultsTable) { dataSource, indexPath, tableView in
+            
+            let cell = (tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as? PersonTableViewCell)!
+            let viewModel = dataSource[indexPath.row]
+            
+            viewModel.name?.bind(to: cell.nameLabel.reactive.text).dispose(in: cell.bag)
+            //            viewModel.height?.bind(to: cell.eyeColorView.reactive.backgroundColor).dispose(in: cell.bag)
+            //            viewModel.created?.map { "\($0)" }.bind(to: cell.ageLabel).dispose(in: cell.bag)
+            
+            return cell
+        }
         
+        twoWayField.reactive.text.bidirectionalMap(to: { Int($0!)! }, from: { "\($0)" }).bidirectionalBind(to: mainVM.twoWayText)
+        
+        //twoWayField.reactive.text.map({ Int($0!)! }).bind(to: mainVM.twoWayText)
+        mainVM.twoWayText.map({ "\($0)" }).bind(to: twoWayLabelResult)
+        
+        Alamofire.request("http://swapi.co/api/people/", method: .get)
+            .responseJsonDictionary()
+            .then { json -> Void in
+                
+                for case let result in json["results"] as! [Any] {
+                    let person = try Person(json: result as! [String : Any])
+                    self.mainVM.persons.append(person)
+                }
+            }.catch{ error in
+                print(error)
+        }
         
         buttonka.reactive.tap.observeNext { [weak self] _ in
             guard let weakSelf = self else { return }
             
-            weakSelf.carVM.results.append(CarModel(JSONString: "{ \"type\":\"Audi\", \"year\": 1984, \"color\": \"red\" }")!)
-            
+            weakSelf.mainVM.twoWayText.value = 1234
         }.dispose(in: bag)
 
-        carVM.results.bindAnimated(to: resultsTable) { dataSource, indexPath, tableView in
-            
-            let cell = (tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as? TextTableViewCell)!
-            let viewModel = dataSource[indexPath.row]
-            
-            viewModel.type?.bind(to: cell.cellText).dispose(in: cell.bag)
-            viewModel.color?.bind(to: cell.cellText.reactive.textColor).dispose(in: cell.bag)
-            viewModel.year?.map { "\($0)" }.bind(to: cell.yearInput).dispose(in: cell.bag)
-        
-            return cell
-        }
     }
 }
 

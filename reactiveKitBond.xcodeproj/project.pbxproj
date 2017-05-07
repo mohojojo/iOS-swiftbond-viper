@@ -10,8 +10,8 @@
 		20D3ED9124BEF9879D0F8EC6 /* Pods_reactiveKitBondTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D56E9843D90C3D6F746E4E29 /* Pods_reactiveKitBondTests.framework */; };
 		28B76B7562C16AEC5653AAC0 /* Pods_reactiveKitBond.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB83DD30F809EA91F9746D8E /* Pods_reactiveKitBond.framework */; };
 		79F0D8932E1CC9A572F759DB /* Pods_reactiveKitBondUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C503E780DA7881DD307CB980 /* Pods_reactiveKitBondUITests.framework */; };
-		9BA6044E1EB8BE100059ECDD /* TextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA6044D1EB8BE100059ECDD /* TextTableViewCell.swift */; };
-		9BA604501EB8C1340059ECDD /* ListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA6044F1EB8C1340059ECDD /* ListCellViewModel.swift */; };
+		9BA6044E1EB8BE100059ECDD /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA6044D1EB8BE100059ECDD /* PersonTableViewCell.swift */; };
+		9BA604501EB8C1340059ECDD /* PersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA6044F1EB8C1340059ECDD /* PersonModel.swift */; };
 		9BC773821EB37A73002A65A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC773811EB37A73002A65A3 /* AppDelegate.swift */; };
 		9BC773841EB37A73002A65A3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC773831EB37A73002A65A3 /* ViewController.swift */; };
 		9BC773871EB37A73002A65A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BC773851EB37A73002A65A3 /* Main.storyboard */; };
@@ -19,7 +19,7 @@
 		9BC7738C1EB37A73002A65A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BC7738A1EB37A73002A65A3 /* LaunchScreen.storyboard */; };
 		9BC773971EB37A74002A65A3 /* reactiveKitBondTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC773961EB37A74002A65A3 /* reactiveKitBondTests.swift */; };
 		9BC773A21EB37A74002A65A3 /* reactiveKitBondUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC773A11EB37A74002A65A3 /* reactiveKitBondUITests.swift */; };
-		9BC773B01EB3855A002A65A3 /* CarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC773AF1EB3855A002A65A3 /* CarModel.swift */; };
+		9BC773B01EB3855A002A65A3 /* SWMainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC773AF1EB3855A002A65A3 /* SWMainViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,8 +42,8 @@
 /* Begin PBXFileReference section */
 		3ACEB33F34E9CE34C1234170 /* Pods-reactiveKitBondUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reactiveKitBondUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-reactiveKitBondUITests/Pods-reactiveKitBondUITests.release.xcconfig"; sourceTree = "<group>"; };
 		798A9CE9C805AD57AFF3CDFD /* Pods-reactiveKitBondTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reactiveKitBondTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-reactiveKitBondTests/Pods-reactiveKitBondTests.release.xcconfig"; sourceTree = "<group>"; };
-		9BA6044D1EB8BE100059ECDD /* TextTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextTableViewCell.swift; sourceTree = "<group>"; };
-		9BA6044F1EB8C1340059ECDD /* ListCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListCellViewModel.swift; sourceTree = "<group>"; };
+		9BA6044D1EB8BE100059ECDD /* PersonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
+		9BA6044F1EB8C1340059ECDD /* PersonModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonModel.swift; sourceTree = "<group>"; };
 		9BC7737E1EB37A73002A65A3 /* reactiveKitBond.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = reactiveKitBond.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BC773811EB37A73002A65A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BC773831EB37A73002A65A3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,7 +57,7 @@
 		9BC7739D1EB37A74002A65A3 /* reactiveKitBondUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = reactiveKitBondUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BC773A11EB37A74002A65A3 /* reactiveKitBondUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reactiveKitBondUITests.swift; sourceTree = "<group>"; };
 		9BC773A31EB37A74002A65A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9BC773AF1EB3855A002A65A3 /* CarModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarModel.swift; sourceTree = "<group>"; };
+		9BC773AF1EB3855A002A65A3 /* SWMainViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWMainViewModel.swift; sourceTree = "<group>"; };
 		AB1428E43B96147638A0CD71 /* Pods-reactiveKitBondTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reactiveKitBondTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-reactiveKitBondTests/Pods-reactiveKitBondTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C31E52E14AF1350291BF28CC /* Pods-reactiveKitBond.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reactiveKitBond.release.xcconfig"; path = "Pods/Target Support Files/Pods-reactiveKitBond/Pods-reactiveKitBond.release.xcconfig"; sourceTree = "<group>"; };
 		C503E780DA7881DD307CB980 /* Pods_reactiveKitBondUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_reactiveKitBondUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,7 +111,7 @@
 		9B6721A81EBA0005009B3656 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				9BA6044F1EB8C1340059ECDD /* ListCellViewModel.swift */,
+				9BA6044F1EB8C1340059ECDD /* PersonModel.swift */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -145,11 +145,11 @@
 				9BC773811EB37A73002A65A3 /* AppDelegate.swift */,
 				9BC773831EB37A73002A65A3 /* ViewController.swift */,
 				9BC773851EB37A73002A65A3 /* Main.storyboard */,
-				9BC773AF1EB3855A002A65A3 /* CarModel.swift */,
+				9BC773AF1EB3855A002A65A3 /* SWMainViewModel.swift */,
 				9BC773881EB37A73002A65A3 /* Assets.xcassets */,
 				9BC7738A1EB37A73002A65A3 /* LaunchScreen.storyboard */,
 				9BC7738D1EB37A73002A65A3 /* Info.plist */,
-				9BA6044D1EB8BE100059ECDD /* TextTableViewCell.swift */,
+				9BA6044D1EB8BE100059ECDD /* PersonTableViewCell.swift */,
 			);
 			path = reactiveKitBond;
 			sourceTree = "<group>";
@@ -348,7 +348,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		21A216C180194086ADB86407 /* [CP] Embed Pods Frameworks */ = {
@@ -378,7 +378,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		4ED366B31DDEAC9B16593117 /* [CP] Copy Pods Resources */ = {
@@ -423,7 +423,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		ACE85CD3FD583B5E3ACE8240 /* [CP] Copy Pods Resources */ = {
@@ -463,11 +463,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9BA604501EB8C1340059ECDD /* ListCellViewModel.swift in Sources */,
+				9BA604501EB8C1340059ECDD /* PersonModel.swift in Sources */,
 				9BC773841EB37A73002A65A3 /* ViewController.swift in Sources */,
 				9BC773821EB37A73002A65A3 /* AppDelegate.swift in Sources */,
-				9BA6044E1EB8BE100059ECDD /* TextTableViewCell.swift in Sources */,
-				9BC773B01EB3855A002A65A3 /* CarModel.swift in Sources */,
+				9BA6044E1EB8BE100059ECDD /* PersonTableViewCell.swift in Sources */,
+				9BC773B01EB3855A002A65A3 /* SWMainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
